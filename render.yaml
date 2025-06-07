@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: meu-web-service
+    env: node
+    plan: free
+    repo: https://github.com/seu-usuario/meu-web-postgres
+    branch: main
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: meu-postgres
+          property: connectionString
+
+databases:
+  - name: mariajose
+    plan: free
+    region: oregon
