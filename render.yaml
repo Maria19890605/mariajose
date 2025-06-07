@@ -3,7 +3,7 @@ services:
     name: meu-web-service
     env: node
     plan: free
-    repo: https://github.com/seu-usuario/meu-web-postgres
+    repo: https://github.com/Maria19890605/mariajose
     branch: main
     buildCommand: npm install
     startCommand: node index.js

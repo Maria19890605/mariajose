@@ -15,7 +15,7 @@ const pool = new Pool({
 app.get('/', async (req, res) => {
   try {
     const result = await pool.query('SELECT NOW()');
-    res.send(Servidor rodando! Hora do banco: ${result.rows[0].now});
+    res.send(`Servidor rodando! Hora do banco: ${result.rows[0].now}`);
   } catch (err) {
     console.error(err);
     res.status(500).send('Erro no banco de dados');
@@ -23,5 +23,5 @@ app.get('/', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(App rodando na porta ${port});
+  console.log(`App rodando na porta ${port}`);
 });
